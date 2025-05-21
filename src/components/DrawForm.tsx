@@ -25,7 +25,6 @@ type DrawFormProps = {
 
 const DrawForm = ({ onSuccess }: DrawFormProps) => {
   const [termsAccepted, setTermsAccepted] = useState<boolean>(false);
-  const [policyAccepted, setPolicyAccepted] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -62,8 +61,7 @@ const DrawForm = ({ onSuccess }: DrawFormProps) => {
     }
   };
 
-  const isButtonDisabled =
-    !termsAccepted || !policyAccepted || form.formState.isSubmitting;
+  const isButtonDisabled = !termsAccepted || form.formState.isSubmitting;
 
   return (
     <Card className="border-white/60 border-2 bg-white/20 backdrop-blur-xl p-8 md:p-12 max-w-4xl mx-auto w-full rounded-[4rem]">
@@ -246,8 +244,6 @@ const DrawForm = ({ onSuccess }: DrawFormProps) => {
               <div className="flex items-start gap-2">
                 <Checkbox
                   id="privacy-policy"
-                  checked={policyAccepted}
-                  onCheckedChange={(checked) => setPolicyAccepted(!!checked)}
                   className="bg-white data-[state=checked]:bg-owr-blue data-[state=checked]:border-none data-[state=checked]:outline-none size-6"
                 />
                 <Label
