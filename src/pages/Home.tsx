@@ -9,9 +9,10 @@ import { useImagesLoaded } from "@/lib/useImagesLoaded";
 
 const Home = () => {
   const imagesLoaded = useImagesLoaded();
+
   return (
     <div className="bg-[url(@/assets/main_bg.png)] min-h-screen bg-no-repeat bg-cover ">
-      <div className="grid place-content-center relative p-8 h-screen">
+      <div className="grid place-content-center relative p-8 min-h-screen">
         <img
           src={top}
           alt=""
@@ -28,7 +29,7 @@ const Home = () => {
             {/* <a href="/"> */}
             <img src={logo} alt="" className="mx-auto" />
             {/* </a> */}
-            <h1 className="text-8xl font-bold text-center bg-[linear-gradient(90deg,_rgba(0,147,209,0.85)_0%,_#5CE7FF_27.4%,_#B33FFF_64.9%,_#CBB2FF_100%)] bg-clip-text text-transparent">
+            <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold text-center bg-[linear-gradient(90deg,_rgba(0,147,209,0.85)_0%,_#5CE7FF_27.4%,_#B33FFF_64.9%,_#CBB2FF_100%)] bg-clip-text text-transparent">
               15 Great Prizes{" "}
               <span className="block text-5xl my-4 text-white">
                 to celebrate
